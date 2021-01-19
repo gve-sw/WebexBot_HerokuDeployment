@@ -1,0 +1,9 @@
+{
+  "stack": "heroku-20",
+  "description": "Webex Bot deployed using Heroku Platform APIs",
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
