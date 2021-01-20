@@ -11,7 +11,7 @@ A Python application to automatically deploy a Webex Bot to Heroku using the [He
 * **Notifier Bots**: Notifier bots typically respond to events in external services and post a summary in Webex. A bot that sends a notification about an alarm in Meraki is an example. 
 * **Controller Bots**: Controller bots act as a text-based remote control for external services. Users can call the bot and ask it to take certain actions, such as updating configurations in Cisco DNA Center.  
 
-**Heroku**: [Heroku](www.heroku.com) is a platform as a service (Paas), which is popular by developers to deploy and manage applications in the cloud. It officially supports languages such as Python, Node.js, or Java, and it provides an [API](https://devcenter.heroku.com/categories/platform-api) to automate services, which makes it easy to use and quick to setup. 
+**Heroku**: [Heroku](https://www.heroku.com) is a platform as a service (Paas), which is popular by developers to deploy and manage applications in the cloud. It officially supports languages such as Python, Node.js, or Java, and it provides an [API](https://devcenter.heroku.com/categories/platform-api) to automate services, which makes it easy to use and quick to setup. 
 
 **Webex Bot on Heroku**: Webex bots are triggered using [webhooks](https://developer.webex.com/docs/api/guides/webhooks). Webhooks need to be configured to listen to a public URL, which is provided when hosting the application on a cloud service like Heroku. Heroku hosts the application and makes it publicly accessible at the URL it is hosted at, so that when a service is configured to send a message to the webhook, the application listens and responds. The application processes the request following the script that defines the actions of the bot and sends a notification in the name of the bot.
 
@@ -62,15 +62,11 @@ A Python application to automatically deploy a Webex Bot to Heroku using the [He
 
 1. Clone this repository with `git clone <this repo>`.
 
-2. Open the `bot.py` file, and take the following actions:
+2. Navigate to the `bot` directory and open the `bot.py` file. Take the following actions:
     - Depending on whether you are implementing a notifier or controller bot, uncomment the lines of codes as described in the file itself. 
     - Customize the behaviour of the bot. The default behaviour of the bot in this repo is to send a hard-coded message to Webex. Depending on the use case of your bot, this should be changed.
 
-3. Create your own repository on GitHub and push the following files to the repository following [these steps](https://docs.github.com/en/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line):
-    - `app.json`
-    - `bot.py`
-    - `Procfile`
-    - `requirements.txt`
+3. Create your own repository on GitHub and push all files in the `bot` directory (`app.json`, `bot.py`, `Procfile`, `requirements.txt`) to the repository following [these steps](https://docs.github.com/en/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line).
 
 6. Navigate to the `setup` directory and open the `credentials.yaml` file. Fill in the information and save the file: 
     
@@ -117,7 +113,7 @@ A Python application to automatically deploy a Webex Bot to Heroku using the [He
 
 
 ## License
-Provided under Cisco Sample Code License, for details see [LICENSE](./LICENSE).
+Provided under Cisco Sample Code License, for details see [LICENSE](./LICENSE.md).
 
 
 
