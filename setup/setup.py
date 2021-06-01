@@ -13,7 +13,7 @@ or implied.
 """
 
 
-import yaml, time, requests, sys
+import yaml, time, requests, sys, webexteamssdk
 
 
 print('Heroku deployment starting')
@@ -74,6 +74,22 @@ while True:
     if appsetup_status == "succeeded":
         app_url = appsetup_status_request.json()['resolved_success_url']
         print('The app is deployed to: ' + app_url)
+
+        # For controller bot: add webhook
+        '''
+        try:
+            api = webexteamssdk.WebexTeamsAPI(access_token=webex_bot_token)
+            api.webhooks.create(
+                name="Heroku bot deployment",
+                targetUrl=app_url,
+                resource="messages",
+                event="created"
+            )
+            print("--- Registered webhook for Heroku URL")
+        except Exception as exc:
+            print("Something went wrong in creating a webhook: " + str(exc))
+        '''
+
         break
     elif appsetup_status == "failed":
         failure_message = appsetup_status_request.json()['failure_message']
