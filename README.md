@@ -108,6 +108,10 @@ A Python application to automatically deploy a Webex Bot to Heroku using the [He
         5. Click **Run**. Ensure you receive a **200/OK** status message in the response. 
     3. You can now chat with the bot on Webex and it will take actions following the logic of the `bot.py` script. 
         - Take into account that a bot can only access messages sent to it directly. In group spaces, bots must be `@mentioned` to access the message. In 1-to-1 spaces, a bot has access to all messages from the user.
+    
+    **OR**
+
+    1. Uncomment the corresponding code in `setup.py`
 
 
 
